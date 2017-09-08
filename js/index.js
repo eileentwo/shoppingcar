@@ -19,12 +19,17 @@ $(function(){
 		//details选择部分
 		var dBtn= $('.product_tbody').find('.btn');
 			dBtn.click(function(){
-				var Index =$(this).index();
+				var Index =$(this).parent().parent().index();
 				var dInp =$(this).find('input');
 				if($(this).hasClass('checked')){
 					$(this).removeClass('checked');
 					dInp.val('未加入');
-					
+					$(".checked_tbody .carList").each(function(){
+						console.log($(this).find("div").data('index'));
+					    if(Index==$(this).find("div").data('index')){
+							$(this).remove();
+						}
+					});
 				}
 				else{
 					$("#layer").fadeIn();
@@ -34,13 +39,15 @@ $(function(){
 					var outputVolume = $(this).parent().parent().find("td:eq(4)").text();
 					var Index = $(this).parent().parent().index();
 					
-					var html = '<li><ul class="ClearFix"><li><div class="Delete" data-index="'+Index+'">'+brand+'</div></li><li>'+carName+'</li><li>'+carType+'</li><li>'+outputVolume+'</li></ul>';
+					var html = '<li class="carList"><ul class="ClearFix"><li><div class="Delete" data-index="'+Index+'">'+brand+'</div></li><li>'+carName+'</li><li>'+carType+'</li><li>'+outputVolume+'</li></ul>';
 					
 					if($('.checked_tbody').has('li').length>0){
 						$('.checked_tbody li:eq(0)').before(html);
 					}else{
 						$('.checked_tbody').append(html)
 					}
+					
+					//清除当前这一行
 					$('.Delete').on("click", function(){
 						$(this).parent().parent().parent().remove();
 						var num = $('.Delete').length;
@@ -53,6 +60,7 @@ $(function(){
 					$('.number').text(num)
 					$(this).addClass('checked');
 					dInp.val('已加入');
+					$(".selected").hide();
 				};
 			
 		})
@@ -60,20 +68,13 @@ $(function(){
 		//打开弹层
 		$(".selected").click(function(){
 			$("#layer").fadeIn();
-			$(".selected").hide();
+			$(this).hide();
 		})
 		//关闭弹层
 		$('.close').click(function(){
 			$("#layer").fadeOut();
 			$(".selected").show();
 		})
-		//清除当前这一行
-		//$('.Delete').click(function(){
-//		$('.Delete').on("click", function(){
-//			$(this).parent().parent().parent().remove();
-//			var num = $('.Delete').length;
-//			$('.number').text(num)
-//		})
 		 // 一键清除
 		$('.clearAll').click(function(){
 			$('.checked_tbody li ').remove();
