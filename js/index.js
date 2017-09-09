@@ -25,9 +25,10 @@ $(function(){
 					$(this).removeClass('checked');
 					dInp.val('未加入');
 					$(".checked_tbody .carList").each(function(){
-						console.log($(this).find("div").data('index'));
 					    if(Index==$(this).find("div").data('index')){
 							$(this).remove();
+							var num = $('.Delete').length;
+							$('.number').text(num)
 						}
 					});
 				}
