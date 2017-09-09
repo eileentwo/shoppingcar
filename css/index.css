@@ -136,7 +136,7 @@ input {
 }
 /*product_tbody 部分*/
 .product_tbody {
-	padding: 0 2em;
+	padding: 0 2em 100px;
 }
 .product_tbody table {
 	width: 100%;
