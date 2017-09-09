@@ -11,18 +11,19 @@
 	</head>v 
 	<body>
 		<div class="product">
-			<div class="choices ClearFix">
-				<ul>
-					<li class="choice brand ">
+			<div>
+				<ul class="choices ClearFix">
+					<li class="choice brand">
 						<div>
 							<strong>品牌</strong>
 							<span><i></i></span>
 						</div>
 						<ul>
-							<li>奥迪（进口）</li>
-							<li></li>
-							<li></li>
-							<li></li>
+							<li>品牌</li>
+							<li>奥迪</li>
+							<li>宝马</li>
+							<li>奔驰</li>
+							<li>其他</li>
 						</ul>
 					</li>
 					<li class="choice car_type">
@@ -31,6 +32,7 @@
 							<span><i></i></span>
 						</div>
 						<ul>
+							<li>车型</li>
 							<li>80</li>
 							<li></li>
 							<li></li>
@@ -43,6 +45,7 @@
 							<span><i></i></span>
 						</div>
 						<ul>
+							<li>排量</li>
 							<li>1.6</li>
 							<li></li>
 							<li></li>
@@ -50,8 +53,8 @@
 						</ul>
 					</li>
 				</ul>
-				<div>
-					<input type="button" value="查询" id="inquire" />
+				<div id="inquire" class="inquire">
+					<input type="button" value="查询" />
 					<span>品牌市场容量分析</span>
 				</div>
 			</div>
@@ -76,8 +79,11 @@
 					</tr>
 				</thead>
 			</table>
+			
 			<div class="product_tbody">
-				<table border="1" ></table>
+				<table border="1" >
+					<!--存放数据的地方，tr是生成的-->
+				</table>
 			</div>
 		</div>
 		<div class="checked_wrap" style="display: none;" id="layer">
