@@ -2,7 +2,7 @@
 $(function(){
 	//查询调用ajax部分
 	$.ajax({
-	   url: "json/package.json",//json文件位置
+	   url: "https://raw.githubusercontent.com/eileentwo/shoppingcar/master/json/package.json",//json文件位置
 	   type: "GET",//请求方式为get
 	   dataType: "json", //返回数据格式为json
 	   success: function(data) {//请求成功完成后要执行的方法 
