@@ -90,7 +90,7 @@ input {
 	background-color: #4582ff;
 	text-align: center;
 	position: fixed;
-	right: 110px;
+	right: 8%;
 	bottom:42px;
 }
 .selected i {
@@ -136,7 +136,7 @@ input {
 }
 /*product_tbody 部分*/
 .product_tbody {
-	padding: 0 2em;
+	padding: 0 2em 100px;
 }
 .product_tbody table {
 	width: 100%;
