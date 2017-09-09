@@ -1,10 +1,12 @@
 .checked_wrap {
 	width: 487px;
+	height: 100%;
 	font-size: 15px;
 	color: #656567;
+	overflow-y: scroll;
 	position: fixed;
-	top: 0;
-	right: 0;
+	top: 5px;
+	right:-18px;
 	background-color: #fff;
 	box-shadow: -2px 2px 5px #CCCCCC;
 	border-radius: 5px;
