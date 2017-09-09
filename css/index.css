@@ -10,13 +10,14 @@ input {
 	color: #636363;
 	position: relative;
 }
-.product .choices {
+.product>div:nth-of-type(1){
 	padding: 33px 0 30px 26px;
 	background-color: #fff;
 }
-.choices ul {
+.choices {
 	float: left;
 	border: 1px solid #e9e9e9;
+	border-right-width: 0;
 	border-radius: 2px;
 	margin-right: 10px;
 }
@@ -54,11 +55,11 @@ input {
 	border-color:#fff transparent transparent transparent ;
 }
 
-.choices div {
+.choices>div {
 	float: left;
 	width: 235px;
 }
-.choices div input {
+.inquire input {
 	width: 74px;
 	height: 36px;
 	line-height: 36px;
@@ -183,4 +184,162 @@ input {
 }
 .product_tbody  .checked input {
 	color: #fff;
+}
+/*弹窗部分的CSS*/
+.checked_wrap {
+	width: 487px;
+	max-height: 95%!important;
+	font-size: 15px;
+	color: #656567;
+	overflow-y: scroll;
+	position: fixed;
+	top: 0;
+	right:-20px;
+	background-color: #fff;
+	box-shadow: -2px 2px 5px #CCCCCC;
+	border-radius: 5px;
+	padding-bottom: 50px;
+
+}
+.checked_top {
+	height: 93px;
+	padding-left: 14px;
+	background-color: #579aff;
+}
+.checked_top nav {
+	padding: 9px 42px 0 30px;
+	line-height: 84px;
+	height: 84px;
+	background-color: #f9f9fb;
+}
+.checked_top .close {
+	width: 20px;
+	height: 8px;
+	background-color: #bbb;
+	border-radius: 5px;
+	position: absolute;
+	top: 15px;
+	right: 13px;
+}
+.checked_top h2 {
+	float: left;
+	color: #30333a;
+	font-size: 24px;
+}
+.checked_top .number{
+	color: #006afc;
+	padding: 0 15px 0 10px;
+}
+.checked_top p {
+	float: right;
+	position: relative;
+}
+
+.checked_top p:after {
+	content: '';
+	display: inline-block;
+	width: 22px;
+	height: 24px;
+	margin-left: 12px;
+	background: url(../img/spirit.png) no-repeat -24px 0;
+	position: relative;
+	top: 6px;
+}
+.checked_thead {
+	background-color: #f9f9fb;
+	height: 52px;
+	line-height: 52px;
+	border-bottom: 1px solid #e9e9e9;
+}
+
+.checked_thead li,
+.checked_tbody ul li {
+	float: left;
+	width: 23%;
+}
+.checked_thead li:nth-of-type(1){
+	width: 39%;
+	text-indent: 46px;
+}
+
+.checked_thead li:nth-of-type(4),
+.checked_tbody ul li:nth-of-type(4){
+	width: 15%;
+}
+
+.checked_tbody {
+	background-color: #fff;
+	margin-bottom: 50px;
+}
+
+.checked_tbody>li {
+	height: 59px;
+	line-height: 59px;
+	border-bottom: 1px solid #e9e9e9;
+}
+
+.checked_tbody ul li:nth-of-type(1) {
+	width: 39%;
+	text-indent: 18px;
+}
+
+.checked_tbody ul div {
+	width: 180px;
+	overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.checked_tbody ul div:before {
+	content: '';
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background:url(../img/spirit.png) no-repeat 0 -80px ;
+	margin-right: 12px;
+}
+.otherSelect {
+	padding-left: 5px;
+	margin-bottom: 56px;
+}
+.otherSelect div {
+	float: left;
+	width: 176px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border: 1px solid #cacaca;
+	border-radius: 20px;
+	position: relative;
+	margin-left: 40px;
+}
+
+.otherSelect div:nth-of-type(2){
+	border-color: #4582ff;
+	background-color: #4582ff;
+	color: #fff;
+}
+.otherSelect div span,
+.otherSelect div i {
+	width: 0;
+	height: 0;
+	border: 7px solid transparent;
+	border-top-color:#646464 ;
+	margin-top: -4px;
+	position: absolute;
+	top: 50%;
+	right: 10px;
+}
+.otherSelect div i {
+	border-width: 6px;
+	border-top-color: #fff ;
+	top: -3px;
+	right:-6px ;
+	z-index: 999;
+}
+.analyse {
+	text-indent: 60px;
+}
+
+.analyse span {
+	margin-right: 30px;
 }

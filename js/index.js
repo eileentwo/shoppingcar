@@ -1,19 +1,52 @@
+
 $(function(){
-	var cLi = $('.choices').find('.choice'),
-		cDiv = $('.choices').find('li div'),
-		cUl = $('.choices').find('li ul'),
-		cAli = $('.choices li ul').find('li'),
-		cInput = $('.choices').find('li input');
+	//查询调用ajax部分
+	$.ajax({
+	   url: "json/package.json",//json文件位置
+	   type: "GET",//请求方式为get
+	   dataType: "json", //返回数据格式为json
+	   success: function(data) {//请求成功完成后要执行的方法 
+	   	
+	       //each循环 使用$.each方法遍历返回的数据date
+	       $.each(data.aboutband, function(i, item) {
+		       	var str ='<tr id="item.id"><td><div class="btn"><a href="javascript:;"><input type="button" value="未加入" /><lable><span></span></lable></a></div></td><td>'+item.brand+'</td><td>'+item.carname+'</td><td>'+item.carstyle+'</td><td>'+item.output_volume+'</td><td>'+item.engine+'</td><td>'+item.drive_mode+'</td><td>'+item.productive_time+'</td><td>'+item.downtime+'</td></tr>';
+				$('.product_tbody table').append(str);
+				
+				$('#inquire').click(function(){
+					if($('.brand strong').text()==item.brand){
+						
+					}
+					
+				})
+			            
+			})
+		
+	
+	var cLi = $('.choice');
+	var	cDiv = $('.choices').find('li div');
+	var	cUl = $('.choices').find('li ul');
+	var	cAli = $('.choices li ul').find('li');
+	var	cInput = $('.choices').find('li input');
 		//下拉列表部分
 		cLi.click(function(){
 			var index =$(this).index();
 			var cUl =cLi.eq(index).find('ul');
 			if(cUl.is(':hidden')){
 				cUl.show().parent().siblings().find('ul').hide();
+				console.log(222);
 			}
 			else {
 				cUl.hide();
 			};
+		})
+		cAli.click(function(){
+			var Text = $(this).text();
+			if($(this).index()=='0'){
+				window.location.reload();
+			}
+			$(this).css('background','#eee').siblings().css('background','#fff');
+			$(this).parent().siblings().find('strong').text(Text);
+			
 		})
 		
 		//details选择部分
@@ -82,5 +115,9 @@ $(function(){
 			var num = $('.Delete').length;
 			$('.number').text(num);
 			dBtn.removeClass('checked');
-		})
+		});
+		
+		}	
+	})	
+		
 })
