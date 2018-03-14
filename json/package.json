@@ -24,6 +24,3 @@
 {"id":"23","brand": "福特","carname": "80","carstyle": "旅行车","output_volume": "1.6","engine":"ADA","drive_mode": "前驱","productive_time": "1993/6/1","downtime":"1996/1/1"},
 {"id":"24","brand": "Jeep吉普","carname": "80","carstyle": "旅行车","output_volume": "1.6","engine":"ADA","drive_mode": "前驱","productive_time": "1993/6/1","downtime":"1996/1/1"}
 ]}
-
-
-

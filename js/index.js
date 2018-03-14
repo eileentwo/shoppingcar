@@ -33,7 +33,7 @@ $(function(){
 			var cUl =cLi.eq(index).find('ul');
 			if(cUl.is(':hidden')){
 				cUl.show().parent().siblings().find('ul').hide();
-				console.log(222);
+//				console.log(222);
 			}
 			else {
 				cUl.hide();
